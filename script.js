@@ -16,6 +16,13 @@ function addTask(){
     }
 }
 
+// Edit Task - Edit Button
+function editTask(index){
+    const newTask = prompt('Edit Task', tasks[index]);
+    console.log(newTask);
+    tasks[index] = newTask.trim();
+    displayTasks();
+}
 
 // Remove Task -- delete button
 function removeTask(index){
@@ -35,11 +42,12 @@ function displayTasks(){
             <div class="button-group">
 
             
-            <button class="delete-btn" onclick="removeTask()"> Delete </button>
+            <button class="edit-btn" onclick="editTask(${i})"> Edit </button>
+            <button class="delete-btn" onclick="removeTask(${i})"> Delete </button>
             </div>
 
             </div>
-        `
+        `;
     }
     taskList.innerHTML = html;
 }
